@@ -20,30 +20,33 @@ body {
     overflow: hidden;
 }
 
-/* HEART CONTAINER */
+/* HEART BACKGROUND CONTAINER */
 #heartContainer {
     position: fixed;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    z-index: -1;      /* ensures hearts stay in background */
 }
 
-/* HEART ANIMATION */
+/* HEART STYLE */
 .heartAnim {
     position: fixed;
-    font-size: 45px;
-    color: rgba(255, 192, 203, 0.6);
-    animation: heartMove 5s linear forwards;
+    font-size: 120px;               /* BIG HEART */
+    color: rgba(255, 105, 180, 0.6);   /* soft pinkish heart */
+    animation: heartMove 6s linear forwards;
     pointer-events: none;
 }
 
+/* HEART GROWING ANIMATION */
 @keyframes heartMove {
     0% {
         transform: translate(-50%, -50%) scale(0.3);
         opacity: 0.9;
     }
     100% {
-        transform: translate(-50%, -50%) scale(3);
+        transform: translate(-50%, -50%) scale(6);   /* grows out of screen */
         opacity: 0;
     }
 }
@@ -121,7 +124,7 @@ Open My Surprise 💌
 
 <script>
 
-// HEART GENERATOR FUNCTION
+// FUNCTION TO CREATE CONTINUOUS GROWING HEARTS
 function createHeart() {
 
     let heart = document.createElement("div");
@@ -135,11 +138,11 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 5000);
+    }, 6000);
 }
 
-// CONTINUOUS HEART EFFECT
-setInterval(createHeart, 800);
+// CONTINUOUS EFFECT
+setInterval(createHeart, 700);
 
 </script>
 
