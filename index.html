@@ -11,88 +11,73 @@
 /* BASE THEME */
 body {
     margin: 0;
-    background: #5a0f1d;   /* dark vintage maroon */
+    background: #5a0f1d;   
     font-family: 'Poppins', sans-serif;
+
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+
     overflow: hidden;
 }
 
-/* HEART BACKGROUND CONTAINER */
+/* HEART BACKGROUND */
 #heartContainer {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;      /* hearts stay in background only */
+    z-index: -1;
 }
 
-/* HEART STYLE */
+/* HEART STYLE – VERY BIG NOW */
 .heartAnim {
     position: fixed;
-    font-size: 200px;               /* MUCH BIGGER HEART */
-    color: rgba(255, 105, 180, 0.6);   /* perfect soft pink */
-    animation: heartMove 8s linear forwards;
-    pointer-events: none;
+    font-size: 320px;                 /* HUGE HEART */
+    color: rgba(255, 20, 100, 0.7);   /* deeper pink */
+
+    animation: heartMove 6s ease-out forwards;
 }
 
-/* HEART GROWING ANIMATION */
+/* HEART ANIMATION */
 @keyframes heartMove {
     0% {
-        transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.3);
         opacity: 0.9;
     }
+
     100% {
-        transform: translate(-50%, -50%) scale(10);   /* HUGE GROWTH */
+        transform: translate(-50%, -50%) scale(14);   /* EXTREME GROW */
         opacity: 0;
     }
 }
 
-/* MAIN LAYOUT CARD */
+/* MAIN CARD */
 .card {
-    background: rgba(255, 240, 240, 0.95);
+    background: rgba(255, 240, 240, 0.97);
     border-radius: 20px;
     padding: 25px;
     width: 90%;
     max-width: 420px;
-    text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.4);
-    animation: fade 1s ease;
-}
 
-@keyframes fade {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+    text-align: center;
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 h1 {
     font-family: 'Dancing Script', cursive;
     color: #7a1627;
-    font-size: 30px;
 }
 
-p {
-    color: #4a0c18;
-}
-
-/* BUTTON STYLE */
 button {
-    padding: 12px 20px;
-    margin-top: 15px;
-    border: none;
+    padding: 12px 22px;
     border-radius: 25px;
+    border: none;
     background: #7a1627;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #9b1d34;
 }
 
 </style>
@@ -100,31 +85,17 @@ button:hover {
 
 <body>
 
-<!-- HEART BACKGROUND -->
 <div id="heartContainer"></div>
 
-
-<!-- MAIN PAGE -->
 <div class="card">
+<h1>Something Special Awaits 💖</h1>
+<p>Made with love, just for you...</p>
 
-<h1>A Little Surprise Awaits You ❤️</h1>
-
-<p>
-Step into a small world filled with memories, love,  
-and something made only for you...
-</p>
-
-<button>
-Open My Surprise 💌
-</button>
-
+<button>Open Surprise</button>
 </div>
-
-
 
 <script>
 
-// FUNCTION TO CREATE CONTINUOUS BIG GROWING HEARTS
 function createHeart() {
 
     let heart = document.createElement("div");
@@ -138,12 +109,11 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 8000);
+    }, 6000);
 }
 
-// START HEART ANIMATION AFTER PAGE LOAD
 window.onload = function() {
-    setInterval(createHeart, 900);
+    setInterval(createHeart, 700);
 };
 
 </script>
