@@ -27,26 +27,26 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;      /* ensures hearts stay in background */
+    z-index: -1;      /* hearts stay in background only */
 }
 
 /* HEART STYLE */
 .heartAnim {
     position: fixed;
-    font-size: 120px;               /* BIG HEART */
-    color: rgba(255, 105, 180, 0.6);   /* soft pinkish heart */
-    animation: heartMove 6s linear forwards;
+    font-size: 200px;               /* MUCH BIGGER HEART */
+    color: rgba(255, 105, 180, 0.6);   /* perfect soft pink */
+    animation: heartMove 8s linear forwards;
     pointer-events: none;
 }
 
 /* HEART GROWING ANIMATION */
 @keyframes heartMove {
     0% {
-        transform: translate(-50%, -50%) scale(0.3);
+        transform: translate(-50%, -50%) scale(0.5);
         opacity: 0.9;
     }
     100% {
-        transform: translate(-50%, -50%) scale(6);   /* grows out of screen */
+        transform: translate(-50%, -50%) scale(10);   /* HUGE GROWTH */
         opacity: 0;
     }
 }
@@ -124,7 +124,7 @@ Open My Surprise 💌
 
 <script>
 
-// FUNCTION TO CREATE CONTINUOUS GROWING HEARTS
+// FUNCTION TO CREATE CONTINUOUS BIG GROWING HEARTS
 function createHeart() {
 
     let heart = document.createElement("div");
@@ -138,13 +138,15 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 6000);
+    }, 8000);
 }
 
-// CONTINUOUS EFFECT
-setInterval(createHeart, 700);
+// START HEART ANIMATION AFTER PAGE LOAD
+window.onload = function() {
+    setInterval(createHeart, 900);
+};
 
 </script>
 
 </body>
-    </html>
+</html>
