@@ -1,127 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vintage Surprise ❤️</title>
+<title>My Valentine ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
 
 <style>
 
-/* BASE THEME */
 body {
     margin: 0;
-    background: #5a0f1d;   
+    padding: 0;
+    background: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* DARK OVERLAY */
+.overlay {
+    background: rgba(60, 0, 20, 0.75);
     min-height: 100vh;
-
-    overflow: hidden;
+    padding-top: 60px;
 }
 
-/* HEART BACKGROUND */
-#heartContainer {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+/* SLIDING IMAGE */
+.slide-img {
+    width: 260px;
+    border-radius: 20px;
+    animation: slide 2s ease;
+    box-shadow: 0 0 15px black;
 }
 
-/* HEART STYLE – VERY BIG NOW */
-.heartAnim {
-    position: fixed;
-    width: 160px;
-    height: 160px;
-
-    background: #6e162c;
-
-    clip-path: path("M 80 30 
-    C 50 -10, 0 20, 0 60 
-    C 0 120, 80 150, 80 170 
-    C 80 150, 160 120, 160 60 
-    C 160 20, 110 -10, 80 30 Z");
-
-    animation: heartMove 12s ease-out forwards;
-    opacity: 0.5;
-    } 
-@keyframes heartMove {
-    0% {
-        transform: translate(-50%, -50%) scale(0.3);
-        opacity: 0.6;
-    }
-
-    100% {
-        transform: translate(-50%, -50%) scale(14);
+@keyframes slide {
+    from {
+        transform: translateY(-200px);
         opacity: 0;
     }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-/* MAIN CARD */
-.card {
-    background: rgba(255, 240, 240, 0.97);
-    border-radius: 20px;
-    padding: 25px;
-    width: 90%;
-    max-width: 420px;
-
-    text-align: center;
-
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
-
-h1 {
+/* TYPING TEXT */
+.typing {
     font-family: 'Dancing Script', cursive;
-    color: #7a1627;
+    font-size: 26px;
+    margin-top: 25px;
+    min-height: 60px;
 }
 
-button {
-    padding: 12px 22px;
-    border-radius: 25px;
-    border: none;
-    background: #7a1627;
-    color: white;
-    cursor:pointer;
+.valentine {
+    font-size: 32px;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fade 3s forwards;
+    animation-delay: 8s;
+}
+
+@keyframes fade {
+    to {
+        opacity: 1;
+    }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div id="heartContainer"></div>
+<div class="overlay">
 
-<div class="card">
-<h1>Something Special Awaits 💖</h1>
-<p>Made with love, just for you...</p>
+    <img src="photo.jpg" class="slide-img">
 
-<button>Open Surprise</button>
+    <div class="typing" id="text"></div>
+
+    <div class="valentine">
+        Wishing You a Beautiful Valentine’s Day ❤️
+    </div>
+
 </div>
 
 <script>
 
-function createHeart() {
+var i = 0;
 
-    let heart = document.createElement("div");
-    heart.className = "heartAnim";
+var txt = "You are my favorite chapter... in the story of my life 💌";
 
-    heart.style.left = "50%";
-    heart.style.top = "50%";
+var speed = 70;
 
-    document.getElementById("heartContainer").appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 12000);
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("text").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
 }
 
-window.onload = function() {
-    setInterval(createHeart, 3500);
-};
+window.onload = typeWriter;
+
 </script>
 
 </body>
