@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vintage Memories 💌</title>
+<title>Vintage Surprise ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== BASE THEME ===== */
-
+/* BASE THEME */
 body {
     margin: 0;
-    padding: 0;
-    background: #4b0f1e; /* dark vintage maroon */
+    background: #5a0f1d;   /* dark vintage maroon */
     font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-/* ===== HEART FADE BACKGROUND ===== */
-
-.heart {
+/* HEART CONTAINER */
+#heartContainer {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    font-size: 250px;
-    color: rgba(255, 192, 203, 0.08);
-    animation: fadeHeart 6s infinite;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
-@keyframes fadeHeart {
+/* HEART ANIMATION */
+.heartAnim {
+    position: fixed;
+    font-size: 45px;
+    color: rgba(255, 192, 203, 0.6);
+    animation: heartMove 5s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes heartMove {
     0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.3);
+        opacity: 0.9;
     }
     100% {
         transform: translate(-50%, -50%) scale(3);
@@ -47,47 +48,48 @@ body {
     }
 }
 
-/* ===== MAIN CARD LAYOUT ===== */
-
-.mainCard {
+/* MAIN LAYOUT CARD */
+.card {
     background: rgba(255, 240, 240, 0.95);
+    border-radius: 20px;
+    padding: 25px;
     width: 90%;
     max-width: 420px;
-    padding: 25px;
-    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-    animation: appear 1s ease;
+    box-shadow: 0 0 25px rgba(0,0,0,0.4);
+    animation: fade 1s ease;
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fade {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 h1 {
     font-family: 'Dancing Script', cursive;
-    color: #6d0f2a;
+    color: #7a1627;
     font-size: 30px;
 }
 
-/* ===== RESPONSIVENESS ===== */
+p {
+    color: #4a0c18;
+}
 
-@media screen and (max-width: 600px) {
-    .mainCard {
-        width: 92%;
-        padding: 20px;
-    }
+/* BUTTON STYLE */
+button {
+    padding: 12px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 25px;
+    background: #7a1627;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-    h1 {
-        font-size: 26px;
-    }
+button:hover {
+    background: #9b1d34;
 }
 
 </style>
@@ -95,20 +97,51 @@ h1 {
 
 <body>
 
-<!-- HEART FADE EFFECT -->
-<div class="heart">❤</div>
+<!-- HEART BACKGROUND -->
+<div id="heartContainer"></div>
 
-<!-- MAIN CENTER CARD -->
-<div class="mainCard">
 
-<h1>Welcome to our little world 💌</h1>
+<!-- MAIN PAGE -->
+<div class="card">
+
+<h1>A Little Surprise Awaits You ❤️</h1>
 
 <p>
-Something beautiful is waiting for you inside...  
-A place made with love, memories and feelings ✨
+Step into a small world filled with memories, love,  
+and something made only for you...
 </p>
+
+<button>
+Open My Surprise 💌
+</button>
 
 </div>
 
+
+
+<script>
+
+// HEART GENERATOR FUNCTION
+function createHeart() {
+
+    let heart = document.createElement("div");
+    heart.innerHTML = "❤";
+    heart.className = "heartAnim";
+
+    heart.style.left = "50%";
+    heart.style.top = "50%";
+
+    document.getElementById("heartContainer").appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+// CONTINUOUS HEART EFFECT
+setInterval(createHeart, 800);
+
+</script>
+
 </body>
-</html>
+    </html>
