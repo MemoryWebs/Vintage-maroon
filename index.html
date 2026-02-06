@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vintage Memories 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE THEME ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #4b0f1e; /* dark vintage maroon */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== HEART FADE BACKGROUND ===== */
+
+.heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 250px;
+    color: rgba(255, 192, 203, 0.08);
+    animation: fadeHeart 6s infinite;
+    z-index: -1;
+}
+
+@keyframes fadeHeart {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* ===== MAIN CARD LAYOUT ===== */
+
+.mainCard {
+    background: rgba(255, 240, 240, 0.95);
+    width: 90%;
+    max-width: 420px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #6d0f2a;
+    font-size: 30px;
+}
+
+/* ===== RESPONSIVENESS ===== */
+
+@media screen and (max-width: 600px) {
+    .mainCard {
+        width: 92%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEART FADE EFFECT -->
+<div class="heart">❤</div>
+
+<!-- MAIN CENTER CARD -->
+<div class="mainCard">
+
+<h1>Welcome to our little world 💌</h1>
+
+<p>
+Something beautiful is waiting for you inside...  
+A place made with love, memories and feelings ✨
+</p>
+
+</div>
+
+</body>
+</html>
