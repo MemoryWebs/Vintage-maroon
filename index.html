@@ -107,7 +107,6 @@ button {
 function createHeart() {
 
     let heart = document.createElement("div");
-    heart.innerHTML = "❤";
     heart.className = "heartAnim";
 
     heart.style.left = "50%";
@@ -117,11 +116,11 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 6000);
+    }, 8000);
 }
 
 window.onload = function() {
-    setInterval(createHeart, 700);
+    setInterval(createHeart, 1200);
 };
 
 </script>
