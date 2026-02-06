@@ -124,6 +124,9 @@ function createHeart() {
 
     let heart = document.createElement("div");
     heart.className = "heartAnim";
+    let size = Math.random() * 40 + 120;
+heart.style.width = size + "px";
+heart.style.height = size + "px";
 
     heart.style.left = "50%";
     heart.style.top = "50%";
