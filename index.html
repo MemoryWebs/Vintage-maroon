@@ -35,19 +35,33 @@ body {
 /* HEART STYLE – VERY BIG NOW */
 .heartAnim {
     position: fixed;
-    width: 200px;
-    height: 180px;
-
-    background: #8b1e3f;  /* classy wine red */
-
-    clip-path: path("M 100 30
-        C 70 -10, 0 20, 0 70
-        C 0 120, 100 160, 100 180
-        C 100 160, 200 120, 200 70
-        C 200 20, 130 -10, 100 30 Z");
+    width: 120px;
+    height: 120px;
+    background: #8b1e3f;
+    transform: rotate(45deg);
 
     animation: heartMove 8s ease-out forwards;
     opacity: 0.6;
+}
+
+.heartAnim::before,
+.heartAnim::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: #8b1e3f;
+    border-radius: 50%;
+}
+
+.heartAnim::before {
+    top: -60px;
+    left: 0;
+}
+
+.heartAnim::after {
+    left: -60px;
+    top: 0;
 }
 
 @keyframes heartMove {
@@ -86,6 +100,7 @@ button {
     border: none;
     background: #7a1627;
     color: white;
+    cursor:pointer;
 }
 
 </style>
