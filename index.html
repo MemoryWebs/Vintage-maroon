@@ -19,15 +19,17 @@
 }
 
 .arrow {
-    width: 80px;
-    transform: rotate(-20deg);
+    width: 95px;
+    transform: rotate(-45deg);
+    animation: bounce 2s infinite ease-in-out;
 }
 
 .click-text {
     font-family: 'Great Vibes', cursive;
-    font-size: 22px;
+    font-size: 26px;
     margin-left: 10px;
     color: #ffd6e0;
+    animation: bounceText 2s infinite ease-in-out;
 }
 
 /* MAIN BODY STYLE */
@@ -55,7 +57,7 @@ body {
 /* SLIDING IMAGE */
 
 .slide-img {
-    width: 170px;
+    width: 160px;
     border-radius: 20px;
     animation: slide 2s ease;
     box-shadow: 0 0 15px black;
@@ -72,7 +74,17 @@ body {
         opacity: 1;
     }
 }
+@keyframes bounce {
+    0% { transform: translateY(0) rotate(-45deg); }
+    50% { transform: translateY(8px) rotate(-45deg); }
+    100% { transform: translateY(0) rotate(-45deg); }
+}
 
+@keyframes bounceText {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(0); }
+    }
 /* TYPING TEXT */
 
 .typing {
