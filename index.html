@@ -35,21 +35,29 @@ body {
 /* HEART STYLE – VERY BIG NOW */
 .heartAnim {
     position: fixed;
-    font-size: 320px;                 /* HUGE HEART */
-    color: rgba(255, 20, 100, 0.7);   /* deeper pink */
+    width: 200px;
+    height: 180px;
 
-    animation: heartMove 6s ease-out forwards;
+    background: #8b1e3f;  /* classy wine red */
+
+    clip-path: path("M 100 30
+        C 70 -10, 0 20, 0 70
+        C 0 120, 100 160, 100 180
+        C 100 160, 200 120, 200 70
+        C 200 20, 130 -10, 100 30 Z");
+
+    animation: heartMove 8s ease-out forwards;
+    opacity: 0.6;
 }
 
-/* HEART ANIMATION */
 @keyframes heartMove {
     0% {
-        transform: translate(-50%, -50%) scale(0.3);
-        opacity: 0.9;
+        transform: translate(-50%, -50%) scale(0.4);
+        opacity: 0.7;
     }
 
     100% {
-        transform: translate(-50%, -50%) scale(14);   /* EXTREME GROW */
+        transform: translate(-50%, -50%) scale(12);
         opacity: 0;
     }
 }
