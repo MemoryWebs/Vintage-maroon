@@ -124,9 +124,6 @@ function createHeart() {
 
     let heart = document.createElement("div");
     heart.className = "heartAnim";
-    let size = Math.random() * 40 + 120;
-heart.style.width = size + "px";
-heart.style.height = size + "px";
 
     heart.style.left = "50%";
     heart.style.top = "50%";
@@ -135,9 +132,12 @@ heart.style.height = size + "px";
 
     setTimeout(() => {
         heart.remove();
-    }, 8000);
+    }, 12000);
 }
 
+window.onload = function() {
+    setInterval(createHeart, 3500);
+};
 window.onload = function() {
     setInterval(createHeart, 1500);
 };
