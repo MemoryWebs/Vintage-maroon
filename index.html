@@ -35,35 +35,20 @@ body {
 /* HEART STYLE – VERY BIG NOW */
 .heartAnim {
     position: fixed;
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
+
     background: #6e162c;
+
+    clip-path: path("M 80 30 
+    C 50 -10, 0 20, 0 60 
+    C 0 120, 80 150, 80 170 
+    C 80 150, 160 120, 160 60 
+    C 160 20, 110 -10, 80 30 Z");
 
     animation: heartMove 12s ease-out forwards;
     opacity: 0.5;
-
-    border-radius: 50% 50% 0 0;
-    }
-.heartAnim::before,
-.heartAnim::after {
-    content: "";
-    position: absolute;
-    width: 140px;
-    height: 140px;
-    background: #6e162c;
-    border-radius: 50%;
-}
-
-.heartAnim::before {
-    top: -70px;
-    left: 0;
-}
-
-.heartAnim::after {
-    left: -70px;
-    top: 0;
-}
-
+    } 
 @keyframes heartMove {
     0% {
         transform: translate(-50%, -50%) scale(0.3);
