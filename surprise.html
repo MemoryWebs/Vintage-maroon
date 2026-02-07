@@ -81,14 +81,14 @@ body {
 
 .sticker {
     position: absolute;
-    top: 450px;          /* below image1 */
-    left: 20px;          /* left corner */
-    width: 100px;         /* cute small size */
+    bottom: 40px;      /* moves to lower side */
+    left: 25px;        /* keeps it on left */
+
+    width: 90px;       /* size remains same */
     transform: rotate(-5deg);
 
     animation: slideSticker 2s ease;
 }
-
 @keyframes slideSticker {
     from {
         transform: translateX(-200px) rotate(-5deg);
@@ -98,7 +98,7 @@ body {
         transform: translateX(0) rotate(-5deg);
         opacity: 1;
     }
-                              }
+    }
 
 </style>
 
