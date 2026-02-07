@@ -9,7 +9,7 @@
 
 <style>
 
-/* MAIN PAGE STYLE WITH DIFFERENT BACKGROUND */
+/* PAGE STYLE */
 
 body {
     margin: 0;
@@ -20,86 +20,65 @@ body {
     background-attachment: fixed;
     font-family: 'Poppins', sans-serif;
     color: white;
+    overflow: hidden;
 }
 
 /* DARK OVERLAY */
 
 .overlay {
     background: rgba(40, 0, 15, 0.8);
-    min-height: 100vh;
-    padding-top: 50px;
-}
-
-/* IMAGE CONTAINER */
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 100vh;
+    position: relative;
     padding: 20px;
 }
 
-/* LEFT IMAGE */
+/* SMALL TILTED IMAGES */
 
-.left-img {
-    width: 170px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px black;
-    animation: slideLeft 2s ease forwards;
+.img1 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 110px;
+    border-radius: 15px;
+    transform: rotate(-10deg);
+    box-shadow: 0 0 10px black;
 }
 
-/* RIGHT IMAGE */
-
-.right-img {
-    width: 170px;
-    border-radius: 20px;
-    box-shadow: 0 0 15px black;
-    animation: slideRight 2s ease forwards;
+.img2 {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    width: 110px;
+    border-radius: 15px;
+    transform: rotate(10deg);
+    box-shadow: 0 0 10px black;
 }
 
-/* ANIMATIONS */
-
-@keyframes slideLeft {
-    from {
-        transform: translateX(-300px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideRight {
-    from {
-        transform: translateX(300px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-/* TYPING LETTER SECTION */
+/* LETTER TEXT AREA */
 
 .letter {
+    position: absolute;
+    top: 40px;
+    left: 180px;
+    right: 180px;
+    bottom: 40px;
+
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    line-height: 1.7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    max-width: 600px;
-    margin: auto;
-    margin-top: 30px;
 }
+
+/* TITLE */
 
 .title {
     font-family: 'Great Vibes', cursive;
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.typing {
-    font-family: 'Cinzel', serif;
-    font-size: 20px;
-    line-height: 1.6;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 </style>
@@ -110,21 +89,19 @@ body {
 
 <div class="overlay">
 
-<div class="container">
+    <img src="image1.jpg" class="img1">
 
-    <img src="image1.jpg" class="left-img">
+    <img src="image2.jpg" class="img2">
 
-    <img src="image2.jpg" class="right-img">
+    <div class="letter">
 
-</div>
+        <div>
+            <div class="title">A Letter For You 💌</div>
 
-<div class="letter">
+            <div id="text"></div>
+        </div>
 
-    <div class="title">A Letter For You 💌</div>
-
-    <div class="typing" id="text"></div>
-
-</div>
+    </div>
 
 </div>
 
@@ -132,9 +109,9 @@ body {
 
 var i = 0;
 
-var txt = "From the moment you entered my life, everything became more beautiful. You bring happiness to my days, peace to my heart, and meaning to my world. Every smile of yours feels like home. This little page is just a small way to remind you how special you are to me... forever and always ❤️";
+var txt = "From the very first moment, you became someone special in my life. You bring calm to my chaos, smiles to my hard days, and warmth to my heart. Every little memory with you feels like a beautiful dream. This page is just a small reminder that you are deeply loved, truly valued, and always appreciated. No matter what happens, you will always have a special place in my heart ❤️";
 
-var speed = 50;
+var speed = 40;
 
 function typeWriter() {
   if (i < txt.length) {
@@ -149,4 +126,4 @@ window.onload = typeWriter;
 </script>
 
 </body>
-  </html>
+</html>
