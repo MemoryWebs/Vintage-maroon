@@ -119,33 +119,13 @@ body {
 
     <img src="photo.jpg" class="slide-img">
 
-    <div class="typing" id="text"></div>
+    <div class="typing"></div>
 
     <div class="valentine">
         Wishing You a Beautiful Valentine’s Day ❤️
     </div>
 
 </div>
-
-<script>
-
-var i = 0;
-
-var txt = "You are my favorite chapter... in the story of my life 💌";
-
-var speed = 70;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("text").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-window.onload = typeWriter;
-
-</script>
 
 </body>
 </html>
