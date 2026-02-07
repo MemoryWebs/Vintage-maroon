@@ -1,42 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Our Memories ❤️</title>
+<title>Forever Us ❤️</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+
 <style>
+
+/* MAIN STYLE */
+
 body {
     margin: 0;
     padding: 0;
-    background: url('your-new-bg.jpg');
+    background: url('final-bg.jpg');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
+
     font-family: 'Poppins', sans-serif;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
+/* OVERLAY */
+
 .overlay {
-    background: rgba(50, 0, 20, 0.7);
-    height: 100vh;
-    padding-top: 80px;
+    background: rgba(40, 0, 15, 0.7);
+    min-height: 100vh;
+    padding: 30px;
+}
+
+/* HEART ANIMATION */
+
+.heart {
+    font-size: 80px;
+    margin-top: 40px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* MESSAGE CARD */
+
+.card {
+    background: rgba(255, 240, 230, 0.85);
+    color: #5a0f1d;
+
+    margin: 30px auto;
+    padding: 25px;
+
+    width: 80%;
+    max-width: 700px;
+
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
 }
 
 .title {
-    font-size: 30px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 36px;
 }
-</style>
 
+.text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+/* PHOTO */
+
+.photo {
+    width: 160px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px black;
+    animation: fade 3s ease;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 12px 25px;
+
+    background: #8b1e3f;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 30px;
+
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #a12b4f;
+}
+
+.footer {
+    margin-top: 30px;
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="overlay">
 
-<h1 class="title">Welcome to Our Special Space 💖</h1>
+    <div class="heart">❤️</div>
 
-<p>You can design anything you want here next!</p>
+    <img src="final-photo.jpg" class="photo">
+
+    <div class="card">
+
+        <div class="title">To My Special One</div>
+
+        <div class="text">
+            No matter where life takes us,  
+            I want you to know one thing...  
+            You are my favorite part of every day 💗  
+            <br><br>
+            Thank you for being you.  
+            Thank you for making me smile.  
+            Thank you for all the love you give.
+            <br><br>
+            With you, every day feels like Valentine’s Day 🌹
+        </div>
+
+    </div>
+
+    <a href="index.html" class="btn">Start Again</a>
+
+    <div class="footer">
+        Made with love, only for you ❤️
+    </div>
 
 </div>
 
