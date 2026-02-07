@@ -99,7 +99,42 @@ body {
         opacity: 1;
     }
     }
+/* CLICK HERE ABOVE LIPSTICK */
 
+.click-area {
+    position: absolute;
+    bottom: 200px;   /* places it above lipstick */
+    left: 25px;      /* same alignment as sticker */
+    text-align: left;
+    z-index: 10;     /* keeps it above sticker */
+}
+
+.arrow {
+    width: 80px;
+    transform: rotate(45deg);
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.click-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    margin-left: 5px;
+    color: #5a0f1d;
+    animation: bounceText 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0) rotate(45deg); }
+    50% { transform: translateY(6px) rotate(45deg); }
+    100% { transform: translateY(0) rotate(45deg); }
+}
+
+@keyframes bounceText {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+    100% { transform: translateY(0); }
+    }
+    
 </style>
 
 </head>
@@ -109,6 +144,12 @@ body {
 <div class="overlay">
 
     <img src="image1.jpg" class="img1">
+    <a href="index.html">
+<div class="click-area">
+    <img src="arrow.png" class="arrow">
+    <div class="click-text">Click Here</div>
+</div>
+    </a>
     <img src="kisses.png" class="sticker"> 
     <img src="image2.jpg" class="img2">
 
