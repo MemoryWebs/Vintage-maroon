@@ -29,18 +29,25 @@ body {
     padding: 20px;
 }
 
+/* TITLE TEXT */
+.main-title {
+    font-family: 'Cinzel';
+    margin-top: 40px;
+    margin-left: 120px;     /* shifts text away from left design */
+}
+
 /* STAMP CONTAINER */
 .stamp-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;     /* shifts stamps to right side */
+    align-items: flex-end;
     margin-top: 80px;
-    margin-right: 20px;       /* gives space from right edge */
+    margin-right: 20px;
     gap: 20px;
 }
-    
+
 .stamp {
-    width: 100px;      /* slightly smaller for mobile fit */
+    width: 100px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -70,6 +77,8 @@ body {
 
     border-radius: 15px;
     box-shadow: 0 0 15px black;
+
+    position: relative;
 }
 
 /* LETTER PART */
@@ -95,14 +104,21 @@ body {
 /* AUDIO SECTION */
 
 .audio-box {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
+audio {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* HIBISCUS STICKER INSIDE CARD */
+
 .hibiscus {
-    width: 120px;
+    width: 100px;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 10px;
+    left: 10px;
 }
 
 /* VIDEO */
@@ -143,13 +159,13 @@ video {
 
 <div class="overlay">
 
-<h2 style="font-family: 'Cinzel'; margin-top:40px;">
-Tap a Stamp to Open Your Surprise 💌
+<h2 class="main-title" id="mainText">
+Open a Little Piece of My Heart 💌
 </h2>
 
 <!-- STAMPS -->
 
-<<div class="stamp-container">
+<div class="stamp-container">
 
     <!-- TOP TWO STAMPS -->
     <div style="display:flex; gap:20px;">
@@ -157,7 +173,7 @@ Tap a Stamp to Open Your Surprise 💌
         <img src="stamp.png" class="stamp" onclick="openSection('two')">
     </div>
 
-    <!-- THIRD STAMP IN CENTER BELOW -->
+    <!-- THIRD STAMP EXACT CENTER -->
     <div style="align-self:center; margin-top:20px;">
         <img src="stamp.png" class="stamp" onclick="openSection('three')">
     </div>
@@ -180,9 +196,10 @@ Tap a Stamp to Open Your Surprise 💌
             you will always have a special place in my heart 💗  
             <br><br>
             Every smile of yours makes my day brighter.  
-            Every moment with you feels magical.  
+            Every moment with you feels like a beautiful dream.  
             <br><br>
-            Thank you for being the best part of my life 🌹
+            Thank you for being my happiness,  
+            my comfort, and my favorite person 🌹
         </div>
 
         <button class="btn" onclick="goBack()">Back</button>
@@ -198,7 +215,7 @@ Tap a Stamp to Open Your Surprise 💌
 
     <div class="card">
 
-        <div class="title">A Message From My Heart</div>
+        <div class="title">A Voice Filled With Love</div>
 
         <div class="audio-box">
             <audio controls>
@@ -207,15 +224,15 @@ Tap a Stamp to Open Your Surprise 💌
         </div>
 
         <div class="text">
-            This voice note holds everything  
-            I may not always say out loud ❤️
+            A small voice note,  
+            carrying all the feelings my heart holds for you ❤️
         </div>
+
+        <img src="hibiscus.png" class="hibiscus">
 
         <button class="btn" onclick="goBack()">Back</button>
 
     </div>
-
-    <img src="hibiscus.png" class="hibiscus">
 
 </div>
 
@@ -226,14 +243,15 @@ Tap a Stamp to Open Your Surprise 💌
 
     <div class="card">
 
-        <div class="title">A Little Memory</div>
+        <div class="title">A Precious Memory</div>
 
-        <video controls>
+        <video id="myVideo" controls>
             <source src="video.mp4" type="video/mp4">
         </video>
 
         <div class="text">
-            A small video, but full of big feelings 💖
+            A tiny video,  
+            but filled with moments I will always cherish 💖
         </div>
 
         <button class="btn" onclick="goBack()">Back</button>
@@ -254,6 +272,8 @@ function openSection(id) {
 
     document.querySelector('.stamp-container').style.display = "none";
 
+    document.getElementById("mainText").style.display = "none";
+
     document.getElementById(id).style.display = "block";
 }
 
@@ -266,6 +286,15 @@ function goBack() {
     }
 
     document.querySelector('.stamp-container').style.display = "flex";
+
+    document.getElementById("mainText").style.display = "block";
+
+    // Stop video when going back
+    var vid = document.getElementById("myVideo");
+    if(vid){
+        vid.pause();
+        vid.currentTime = 0;
+    }
 }
 
 </script>
