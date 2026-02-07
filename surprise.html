@@ -58,19 +58,27 @@ body {
     
 .letter {
     position: absolute;
+
     top: 40px;
-    left: 160px;      /* starts exactly after image 1 */
-    right: 160px;     /* stops before image 2 */
-    bottom: 60px;
+    left: 180px;      /* starts after first image */
+    right: 180px;     /* stops before second image */
+    bottom: 140px;    /* stops above second image */
 
     font-family: 'Cinzel', serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.7;
 
-    text-align: left;
-    overflow-wrap: break-word;
+    text-align: justify;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+
+    display: block;
+}
+#text {
+    width: 100%;
+    display: block;
     }
-
 /* TITLE */
 
 .title {
