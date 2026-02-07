@@ -25,12 +25,36 @@ body {
 
 /* DARK OVERLAY */
 
+/* LIGHTER OVERLAY */
 .overlay {
-    background: rgba(40, 0, 15, 0.8);
+    background: rgba(60, 0, 15, 0.4); /* lighter, more transparent */
     height: 100vh;
     position: relative;
     padding: 20px;
 }
+
+/* VINTAGE MESSAGE BOX */
+.message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: rgba(255, 240, 220, 0.8); /* soft parchment-like color */
+    padding: 20px 35px;
+    border-radius: 12px;
+
+    font-family: 'Cinzel', serif; /* vintage letter style font */
+    font-size: 16px;
+    line-height: 1.8;
+
+    text-align: center;
+    color: #5a0f1d; /* deep maroon text for vintage feel */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    width: 70%;
+    max-width: 800px;
+    }
 
 /* SMALL TILTED IMAGES */
 
@@ -52,29 +76,6 @@ body {
     border-radius: 15px;
     transform: rotate(10deg);
     box-shadow: 0 0 10px black;
-}
-    
-/* CENTER MESSAGE BOX */
-
-.message-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    background: rgba(0, 0, 0, 0.5);
-    padding: 15px 30px;
-    border-radius: 15px;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-
-    text-align: center;
-    box-shadow: 0 0 13px black;
-
-    width: 80%;        /* makes it horizontal */
-    max-width: 800px;  /* prevents too much stretching */
 }
 
 </style>
