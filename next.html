@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Forever Us ❤️</title>
+<title>Special Surprises ❤️</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
 
 <style>
-
-/* MAIN STYLE */
 
 body {
     margin: 0;
@@ -24,22 +22,47 @@ body {
     text-align: center;
 }
 
-/* OVERLAY */
-
+/* DARK OVERLAY */
 .overlay {
-    background: rgba(40, 0, 15, 0.7);
+    background: rgba(50, 0, 20, 0.75);
     min-height: 100vh;
-    padding: 30px;
+    padding: 20px;
 }
 
-/* MESSAGE CARD */
+/* STAMP CONTAINER */
+
+.stamp-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 120px;
+}
+
+.stamp {
+    width: 120px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.stamp:hover {
+    transform: scale(1.1);
+}
+
+/* SECTIONS */
+
+.section {
+    display: none;
+    margin-top: 40px;
+}
+
+/* CARD STYLE */
 
 .card {
-    background: rgba(255, 240, 230, 0.85);
+    background: rgba(255, 240, 230, 0.9);
     color: #5a0f1d;
 
-    margin: 30px auto;
     padding: 25px;
+    margin: 20px auto;
 
     width: 80%;
     max-width: 700px;
@@ -48,30 +71,46 @@ body {
     box-shadow: 0 0 15px black;
 }
 
+/* LETTER PART */
+
 .title {
     font-family: 'Great Vibes', cursive;
-    font-size: 36px;
+    font-size: 34px;
 }
 
 .text {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.6;
     margin-top: 15px;
 }
 
-/* PHOTO */
-
 .photo {
     width: 160px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     box-shadow: 0 0 10px black;
-    animation: fade 3s ease;
 }
 
-@keyframes fade {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* AUDIO SECTION */
+
+.audio-box {
+    margin-top: 20px;
+}
+
+.hibiscus {
+    width: 120px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* VIDEO */
+
+video {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
 }
 
 /* BUTTON */
@@ -79,8 +118,8 @@ body {
 .btn {
     display: inline-block;
 
-    margin-top: 25px;
-    padding: 12px 25px;
+    margin-top: 20px;
+    padding: 10px 22px;
 
     background: #8b1e3f;
     color: white;
@@ -89,17 +128,11 @@ body {
     border-radius: 30px;
 
     font-size: 16px;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
 .btn:hover {
     background: #a12b4f;
-}
-
-.footer {
-    margin-top: 30px;
-    font-family: 'Cinzel', serif;
-    font-size: 18px;
 }
 
 </style>
@@ -109,33 +142,123 @@ body {
 
 <div class="overlay">
 
-    <img src="final-photo.jpg" class="photo">
+<h2 style="font-family: 'Cinzel'; margin-top:40px;">
+Tap a Stamp to Open Your Surprise 💌
+</h2>
+
+<!-- STAMPS -->
+
+<div class="stamp-container">
+    <img src="stamp.png" class="stamp" onclick="openSection('one')">
+    <img src="stamp.png" class="stamp" onclick="openSection('two')">
+    <img src="stamp.png" class="stamp" onclick="openSection('three')">
+</div>
+
+
+<!-- SECTION 1 : LETTER -->
+
+<div id="one" class="section">
 
     <div class="card">
 
-        <div class="title">To My Special One</div>
+        <div class="title">A Little Letter for You</div>
+
+        <img src="letter-photo.jpg" class="photo">
 
         <div class="text">
             No matter where life takes us,  
-            I want you to know one thing...  
-            You are my favorite part of every day 💗  
+            you will always have a special place in my heart 💗  
             <br><br>
-            Thank you for being you.  
-            Thank you for making me smile.  
-            Thank you for all the love you give.
+            Every smile of yours makes my day brighter.  
+            Every moment with you feels magical.  
             <br><br>
-            With you, every day feels like Valentine’s Day 🌹
+            Thank you for being the best part of my life 🌹
         </div>
 
-    </div>
+        <button class="btn" onclick="goBack()">Back</button>
 
-    <a href="index.html" class="btn">Start Again</a>
-
-    <div class="footer">
-        Made with love, only for you ❤️
     </div>
 
 </div>
 
+
+<!-- SECTION 2 : VOICE NOTE -->
+
+<div id="two" class="section">
+
+    <div class="card">
+
+        <div class="title">A Message From My Heart</div>
+
+        <div class="audio-box">
+            <audio controls>
+                <source src="voice.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="text">
+            This voice note holds everything  
+            I may not always say out loud ❤️
+        </div>
+
+        <button class="btn" onclick="goBack()">Back</button>
+
+    </div>
+
+    <img src="hibiscus.png" class="hibiscus">
+
+</div>
+
+
+<!-- SECTION 3 : VIDEO -->
+
+<div id="three" class="section">
+
+    <div class="card">
+
+        <div class="title">A Little Memory</div>
+
+        <video controls>
+            <source src="video.mp4" type="video/mp4">
+        </video>
+
+        <div class="text">
+            A small video, but full of big feelings 💖
+        </div>
+
+        <button class="btn" onclick="goBack()">Back</button>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function openSection(id) {
+
+    document.querySelector('.stamp-container').style.display = "none";
+
+    document.getElementById(id).style.display = "block";
+}
+
+function goBack() {
+
+    var sections = document.getElementsByClassName('section');
+
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
+
+    document.querySelector('.stamp-container').style.display = "flex";
+}
+
+</script>
+
 </body>
-</html>
+    </html>
